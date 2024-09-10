@@ -163,7 +163,7 @@ header{
 #single h6{
     color: blueviolet;
     font-size: 30px;
-    padding: 20px 0 0 10px;
+    padding: 20px 0 0 0;
     text-align: center
 }
 
