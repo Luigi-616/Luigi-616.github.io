@@ -1,0 +1,288 @@
+/*RESET*/
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*HEADER*/
+
+header{
+    height: 100px;
+    background: #333;
+    padding: 0 50px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    text-transform: uppercase;
+    color: blueviolet;
+    font-weight: 200;
+}
+
+.menu a{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 10px;
+    transition: 0.45s;
+}
+
+.mostrar-menu,
+.esconder-menu{
+    font-size: 10px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+}
+
+.mostrar-menu {
+    order: 1;
+}
+
+.menu a:hover,
+.mostrar-menu:hover,
+.esconder-menu:hover{
+    color: blueviolet;
+}
+
+#check{
+    display: none;
+}
+
+/*BANNER*/
+
+#banner{
+    padding: 0 50px;
+    background-image: url(img/FONDO.jpg);
+    height: 60vh;
+    background-position: center;
+    background-size: cover;
+}
+
+#banner:before{
+    content: '';
+    background: rgba(77, 77, 77, 0.6);
+    position: absolute;
+    width: 100%;
+    height: 60vh;
+    left: 0;
+}
+
+.contenido-banner h3{
+    font-size: 30px;
+    font-weight: 400;
+    padding: 10px 0px;
+}
+
+.contenido-banner {
+    position: relative;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contenido-banner h3 span{
+    font-weight: 600;
+}
+
+.boton-saber-mas{
+    text-decoration: none;
+    color: #fff;
+    border: 3px solid blueviolet;
+    padding: 20px 40px;
+    align-self: baseline;
+    transition: all 0.4s;
+}
+
+.boton-saber-mas:hover{
+    background-color: rgb(139, 50, 223);
+}
+
+/*ALBUMES*/
+
+#discos {
+    padding: 50px 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#discos img{
+    border-radius: 100%;
+    width: 180px;
+}
+
+#discos div{
+    padding: 30px 30px;
+}
+
+#discos div h4{
+    text-transform: uppercase;
+    color: black;
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+#discos div p{
+    color: #333;
+    font-size: 18px;
+}
+
+.saber-mas{
+    text-decoration: none;
+    display: inline-block;
+    color: blueviolet;
+    padding: 10px 30px;
+    border: 3px solid blueviolet;
+    border-radius: 30px;
+    margin-top: 15px;
+    transition: all 0.4s;
+}
+
+.saber-mas:hover{
+    background-color: blueviolet;
+    color: #fff;
+
+}
+
+/*SINGLE*/
+
+#single{
+    padding: 0 50px;
+    background: #333;
+    justify-content: center;
+}
+
+#single h6{
+    color: blueviolet;
+    font-size: 30px;
+    padding: 20px 0 0 10px;
+    text-align: center
+}
+
+#single div{
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+}
+
+#single div img{
+    border-radius: 100%;
+    width: 180px;
+} 
+
+#single div p{
+    color: #fff;
+    padding: 15px 15px;
+}
+
+/*GALERIA*/
+
+#galeria{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#galeria div img{
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    padding: 5px;
+    flex-wrap: wrap;
+}
+
+.column{
+    flex: 20%;
+    padding: 5px;
+}
+
+.column img{
+    margin-top: 5px;
+}
+
+#galeria h6{
+    font-size: 30px;
+    color: blueviolet;
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+
+/*FOOTER*/
+
+footer{
+    background: #333;
+    color: #cccccc4a;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/*RESPONSIVE*/
+
+@media(max-width: 768px){
+    /*HEADER*/
+    .mostrar-menu,
+    .esconder-menu{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #333;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0;
+        z-index: 100;
+        transition: 0.8s;
+    }
+    .menu a{
+        display: block;
+        padding: 20px;
+    }
+
+    .esconder-menu{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+
+    #check:checked ~ .menu{
+        right: 0;
+    }
+
+    /*DISCOS*/
+    #discos{
+        flex-direction: column;
+    }
+
+    #discos img{
+        width: 200px;
+    }
+
+    /*SINGLE*/
+    #single div{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #single div img{
+        width: 200px;
+    }
+
+    /*GALERIA*/
+    .column {
+        flex: 100%;
+    }
+}
